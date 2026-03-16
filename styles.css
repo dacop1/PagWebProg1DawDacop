@@ -1,0 +1,282 @@
+/* Importar las nuevas fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap');
+
+/* Reset básico de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Tipografía base y nuevo fondo oscuro */
+  font-family: 'Lato', sans-serif;
+  background-color: #1a1d24; /* Azul oscuro/carbón */
+  color: #e0e0e0; /* Texto gris claro */
+}
+
+.container {
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ====== Estilo del header ====== */
+header {
+  background-color: #242933; /* Un poco más claro que el fondo */
+  padding: 25px 0;
+  border-bottom: 2px solid #3a3f4a;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #ffffff; /* Blanco puro para el logo */
+}
+
+header p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #b0b8c4; /* Subtítulo en gris */
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+header nav ul li {
+  margin: 0 20px;
+}
+
+header nav ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #4dff91; /* Acento verde menta */
+}
+
+/* ====== Estilo de las secciones ====== */
+section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #4dff91; /* Títulos de sección con el acento */
+}
+
+.about p, .contact p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #b0b8c4;
+}
+
+/* ====== BOTONES DE TEMAS (Estilo "Fantasma") ====== */
+.tema-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.tema-btn {
+  background: transparent; /* Fondo transparente */
+  border: 2px solid #4dff91; /* Borde de acento */
+  color: #4dff91; /* Texto de acento */
+  padding: 16px 45px;
+  border-radius: 8px; /* Menos redondeado, más "tech" */
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tema-btn:hover {
+  background: #4dff91; /* Se rellena al pasar el ratón */
+  color: #1a1d24; /* El texto cambia al color del fondo */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(77, 255, 145, 0.15);
+}
+
+/* Botón deshabilitado */
+.tema-btn.disabled {
+  border-color: #555;
+  color: #555;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.tema-btn.disabled:hover {
+  transform: none;
+  box-shadow: none;
+  color: #555;
+  background: transparent;
+}
+
+/* ====== Estilo genérico de "Tarjeta" para Contacto/Sobre Mí ====== */
+.card-box {
+  background-color: #242933; /* Fondo de tarjeta */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: left;
+  border: 1px solid #3a3f4a;
+}
+
+/* ====== SOBRE MÍ ====== */
+.about-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #b0b8c4;
+}
+
+/* ====== CONTACTO PAGE ====== */
+.contact-info-box p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+.contact-info-box a {
+  color: #4dff91;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contact-info-box a:hover {
+  text-decoration: underline;
+}
+
+/* ====== FORMULARIO ====== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #3a3f4a;
+  background-color: #1a1d24; /* Fondo del input igual al body */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #e0e0e0; /* Color del texto que se escribe */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #777;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4dff91;
+  box-shadow: 0 0 8px rgba(77, 255, 145, 0.2);
+  outline: none;
+}
+
+/* Botón genérico (para formularios) */
+.btn {
+  display: inline-block;
+  background-color: #4dff91;
+  color: #1a1d24; /* Texto oscuro para alto contraste */
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #8affbc; /* Versión más clara del verde */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(77, 255, 145, 0.15);
+}
+
+.back-link {
+  margin-top: 20px;
+}
+
+.back-link a {
+  color: #4dff91;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Estilo del footer ====== */
+footer {
+  background-color: #242933;
+  color: #888;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #3a3f4a;
+}
+
+footer a {
+  color: #4dff91;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* ====== ESTILOS PARA BLOQUES DE CÓDIGO ====== */
+/* * Esto estiliza el bloque <pre> para que coincida
+ * con el fondo de los inputs y el borde sutil.
+*/
+pre {
+  background-color: #1a1d24; /* Fondo del color del body */
+  border: 1px solid #3a3f4a; /* Borde sutil */
+  padding: 18px;
+  border-radius: 8px;
+  overflow-x: auto; /* Permite scroll horizontal si el código es largo */
+  margin: 20px 0;
+}
+
+/* * Esto estiliza el <code> dentro del <pre>
+*/
+pre code {
+  font-family: 'Courier New', Courier, monospace; /* Fuente de código */
+  color: #e0e0e0; /* Color de texto claro */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+
