@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>...</head>
+<body>
+    <header>...</header>
+    <main>
+        <section class="theory">
+            <div class="container">
+                <div class="theory-header section-header" style="margin-top: calc(var(--header-height) + 2rem);">
+                    <h1>Unidad 4: Programación Orientada a Objetos en Java</h1>
+                    <p class="section-description">Clases, objetos, herencia, polimorfismo y encapsulamiento.</p>
+                </div>
+                <div class="theory-content">
+                    <h2>1. Conceptos de POO</h2>
+                    <ul>
+                        <li><strong>Clase:</strong> Plantilla para crear objetos.</li>
+                        <li><strong>Objeto:</strong> Instancia de una clase.</li>
+                        <li><strong>Herencia:</strong> Una clase puede heredar atributos y métodos de otra.</li>
+                        <li><strong>Polimorfismo:</strong> Un mismo método puede comportarse de diferentes formas.</li>
+                        <li><strong>Encapsulamiento:</strong> Ocultar detalles internos mediante modificadores de acceso (private, public).</li>
+                    </ul>
+
+                    <h2>2. Ejemplo de clase en Java</h2>
+                    <pre><code>public class Persona {
+    private String nombre;
+    private int edad;
+
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void saludar() {
+        System.out.println("Hola, soy " + nombre);
+    }
+}</code></pre>
+
+                    <h2>3. Herencia</h2>
+                    <pre><code>public class Estudiante extends Persona {
+    private String carrera;
+
+    public Estudiante(String nombre, int edad, String carrera) {
+        super(nombre, edad);
+        this.carrera = carrera;
+    }
+}</code></pre>
+
+                    <div class="back-to-portfolio">...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>...</footer>
+    <button>...</button>
+    <script src="script.js"></script>
+</body>
+</html>

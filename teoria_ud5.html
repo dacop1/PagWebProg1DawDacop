@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>...</head>
+<body>
+    <header>...</header>
+    <main>
+        <section class="theory">
+            <div class="container">
+                <div class="theory-header section-header" style="margin-top: calc(var(--header-height) + 2rem);">
+                    <h1>Unidad 5: Principios de la Programación Orientada a Objetos</h1>
+                    <p class="section-description">Fundamentos avanzados: abstracción, encapsulamiento, herencia y polimorfismo.</p>
+                </div>
+                <div class="theory-content">
+                    <h2>Los cuatro pilares de la POO</h2>
+                    
+                    <h3>1. Abstracción</h3>
+                    <p>Consiste en simplificar la realidad modelando clases con las características esenciales. Se enfoca en qué hace un objeto, no cómo lo hace.</p>
+                    
+                    <h3>2. Encapsulamiento</h3>
+                    <p>Ocultar el estado interno de un objeto y permitir el acceso solo a través de métodos públicos (getters/setters). Protege la integridad de los datos.</p>
+                    
+                    <h3>3. Herencia</h3>
+                    <p>Permite crear nuevas clases basadas en clases existentes, reutilizando código y estableciendo jerarquías.</p>
+                    
+                    <h3>4. Polimorfismo</h3>
+                    <p>Capacidad de un objeto para tomar múltiples formas. En la práctica, significa que una misma interfaz puede ser utilizada por diferentes tipos de objetos.</p>
+                    
+                    <h2>Ejemplo en Java</h2>
+                    <pre><code>// Abstracción
+abstract class Animal {
+    abstract void hacerSonido();
+}
+
+// Herencia y polimorfismo
+class Perro extends Animal {
+    void hacerSonido() {
+        System.out.println("Guau");
+    }
+}
+
+class Gato extends Animal {
+    void hacerSonido() {
+        System.out.println("Miau");
+    }
+}
+
+// Uso
+Animal miMascota = new Perro();
+miMascota.hacerSonido(); // Guau</code></pre>
+
+                    <div class="back-to-portfolio">...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>...</footer>
+    <button>...</button>
+    <script src="script.js"></script>
+</body>
+</html>

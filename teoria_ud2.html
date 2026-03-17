@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2 - Arrays | Daniel Copete</title>
+    <!-- Mismos enlaces que en teoria_ud1.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mismos estilos que en teoria_ud1.html */
+        .theory-content { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+        .theory-content h2 { color: var(--accent); margin-top: 2rem; margin-bottom: 1rem; font-size: 2rem; }
+        .theory-content h3 { color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.5rem; }
+        .theory-content p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+        .theory-content ul, .theory-content ol { color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .theory-content li { margin-bottom: 0.5rem; }
+        .theory-content code { background: rgba(255,255,255,0.05); color: var(--accent); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+        .theory-content pre { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+        .theory-content pre code { background: none; color: var(--text-primary); }
+        .back-to-portfolio { margin-top: 3rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">... (mismo header que index) ...</header>
+    <main>
+        <section class="theory">
+            <div class="container">
+                <div class="theory-header section-header" style="margin-top: calc(var(--header-height) + 2rem);">
+                    <h1>Unidad 2: Arrays</h1>
+                    <p class="section-description">Estructuras de datos: listas, arrays y matrices.</p>
+                </div>
+                <div class="theory-content">
+                    <h2>1. ¿Qué es un array?</h2>
+                    <p>Un array (o lista) es una estructura de datos que permite almacenar una colección de elementos, generalmente del mismo tipo, en posiciones contiguas de memoria. En Python, las listas son dinámicas y pueden contener elementos de diferentes tipos.</p>
+                    
+                    <h2>2. Listas en Python</h2>
+                    <pre><code># Crear una lista
+frutas = ["manzana", "banana", "cereza"]
+numeros = [1, 2, 3, 4, 5]
+mixta = [10, "hola", 3.14, True]</code></pre>
+
+                    <h2>3. Operaciones comunes</h2>
+                    <ul>
+                        <li><strong>Acceder a elementos:</strong> <code>frutas[0]</code> → "manzana"</li>
+                        <li><strong>Modificar:</strong> <code>frutas[1] = "naranja"</code></li>
+                        <li><strong>Añadir al final:</strong> <code>frutas.append("uva")</code></li>
+                        <li><strong>Eliminar:</strong> <code>frutas.remove("manzana")</code> o <code>del frutas[0]</code></li>
+                        <li><strong>Longitud:</strong> <code>len(frutas)</code></li>
+                    </ul>
+
+                    <h2>4. Iterar sobre listas</h2>
+                    <pre><code>for fruta in frutas:
+    print(fruta)
+
+for i in range(len(frutas)):
+    print(frutas[i])</code></pre>
+
+                    <h2>5. Métodos útiles</h2>
+                    <ul>
+                        <li><code>sort()</code>: ordena la lista.</li>
+                        <li><code>reverse()</code>: invierte el orden.</li>
+                        <li><code>index(elemento)</code>: devuelve la posición de un elemento.</li>
+                        <li><code>count(elemento)</code>: cuenta cuántas veces aparece.</li>
+                    </ul>
+
+                    <h2>6. Arrays en otros lenguajes</h2>
+                    <p>En Java, los arrays tienen tamaño fijo y se declaran con el tipo:</p>
+                    <pre><code>int[] numeros = new int[5];
+numeros[0] = 10;
+String[] nombres = {"Ana", "Luis"};</code></pre>
+
+                    <div class="back-to-portfolio">
+                        <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">... (mismo footer) ...</footer>
+    <button id="scrollToTop" class="scroll-top">...</button>
+    <script src="script.js"></script>
+</body>
+</html>
