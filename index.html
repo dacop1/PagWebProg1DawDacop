@@ -14,27 +14,24 @@
     <!-- Font Awesome para iconos (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Hoja de estilos principal (ajusta la ruta si es necesario) -->
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ===== HEADER CON NAVEGACIÓN FIJA (GLASSMORPHISM) ===== -->
+    <!-- ===== HEADER CON NAVEGACIÓN FIJA ===== -->
     <header class="header" id="header">
         <div class="container header-container">
-            <!-- Logo / nombre -->
             <div class="logo">
                 <a href="index.html#inicio">Daniel Copete</a>
             </div>
-
-            <!-- Menú de navegación (con enlaces que siempre apuntan al index) -->
             <nav class="navbar" aria-label="Navegación principal">
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
                     <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="index.html#proyectos" class="nav-link">Proyectos</a></li>
                     <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
                     <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
                 </ul>
-                <!-- Icono hamburguesa para móviles -->
                 <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -45,7 +42,7 @@
     </header>
 
     <main>
-        <!-- ===== HERO SECTION (PRESENTACIÓN PRINCIPAL) ===== -->
+        <!-- ===== HERO SECTION ===== -->
         <section id="inicio" class="hero">
             <div class="container hero-container">
                 <div class="hero-content">
@@ -53,24 +50,22 @@
                     <p class="hero-subtitle">Desarrollador de aplicaciones & apasionado por la tecnología</p>
                     <p class="hero-description">Explora mi portfolio y descubre los proyectos que he desarrollado durante mi formación.</p>
                     <div class="hero-buttons">
-                        <a href="index.html#portfolio" class="btn btn-primary">Ver proyectos</a>
-                        <a href="index.html#contacto" class="btn btn-outline">Contactar</a>
+                        <a href="index.html#portfolio" class="btn btn-primary">Ver unidades</a>
+                        <a href="index.html#proyectos" class="btn btn-outline">Ver proyectos</a>
                     </div>
                 </div>
-                <!-- Espacio para una ilustración o imagen personal (opcional) -->
             </div>
         </section>
 
-        <!-- ===== PORTFOLIO SECTION (TARJETAS DE PROYECTOS) ===== -->
+        <!-- ===== PORTFOLIO DE UNIDADES (EJERCICIOS ACADÉMICOS) ===== -->
         <section id="portfolio" class="portfolio">
             <div class="container">
                 <div class="section-header">
-                    <h2>Portfolio de unidades</h2>
-                    <p class="section-description">En este portafolio encontrarás mis proyectos y ejercicios realizados en programación. Cada unidad agrupa diferentes tipos de ejercicios que muestran mis progresos y habilidades.</p>
+                    <h2>Unidades didácticas</h2>
+                    <p class="section-description">Ejercicios y prácticas realizadas durante mi formación en programación.</p>
                 </div>
-
                 <div class="portfolio-grid">
-                    <!-- TARJETA UNIDAD 1 - Introducción a Python -->
+                    <!-- Unidad 1 -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 1 - Introducción con Python</h3>
@@ -85,7 +80,7 @@
                         </div>
                     </article>
 
-                    <!-- TARJETA UNIDAD 2 - Arrays -->
+                    <!-- Unidad 2 -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 2 - Arrays</h3>
@@ -100,7 +95,7 @@
                         </div>
                     </article>
 
-                    <!-- TARJETA UNIDAD 3 - Java -->
+                    <!-- Unidad 3 -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 3 - Java</h3>
@@ -115,7 +110,7 @@
                         </div>
                     </article>
 
-                    <!-- TARJETA UNIDAD 4 - Java (POO) -->
+                    <!-- Unidad 4 -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 4 - Java (POO)</h3>
@@ -130,11 +125,11 @@
                         </div>
                     </article>
 
-                    <!-- TARJETA UNIDAD 5 - Principios de POO -->
+                    <!-- Unidad 5 -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 5 - Principios de POO</h3>
-                            <p class="card-description">Conceptos fundamentales de la programación orientada a objetos: abstracción, encapsulamiento, herencia y polimorfismo.</p>
+                            <p class="card-description">Abstracción, encapsulamiento, herencia y polimorfismo.</p>
                             <div class="card-tech">
                                 <span class="tech-tag">Java</span>
                                 <span class="tech-tag">POO</span>
@@ -146,11 +141,11 @@
                         </div>
                     </article>
 
-                    <!-- TARJETA PRÓXIMAMENTE (ejemplo 1) -->
+                    <!-- Tarjetas "Próximamente" (máximo 2) -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Próximamente</h3>
-                            <p class="card-description">Nuevo contenido en desarrollo. ¡Vuelve pronto para descubrir más proyectos!</p>
+                            <p class="card-description">Nuevo contenido en desarrollo. ¡Vuelve pronto!</p>
                             <div class="card-tech">
                                 <span class="tech-tag">Próximamente</span>
                             </div>
@@ -160,12 +155,10 @@
                             </div>
                         </div>
                     </article>
-
-                    <!-- TARJETA PRÓXIMAMENTE (ejemplo 2) -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Próximamente</h3>
-                            <p class="card-description">Estamos preparando nuevo material. Mantente atento a las actualizaciones.</p>
+                            <p class="card-description">Estamos preparando nuevo material. Mantente atento.</p>
                             <div class="card-tech">
                                 <span class="tech-tag">Próximamente</span>
                             </div>
@@ -175,8 +168,35 @@
                             </div>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Puedes añadir más tarjetas "Próximamente" copiando el bloque anterior -->
+        <!-- ===== PROYECTOS DESTACADOS (AQUÍ VA EL SNAKE GAME) ===== -->
+        <section id="Juego" class="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Juego</h2>
+                    <p class="section-description">Cada bocado es un triunfo y una amenaza: al alimentarte, tu cuerpo se expande y el tablero se vuelve un laberinto de escamas. Lo que empieza como una danza libre termina en una coreografía de precisión. Aquí, tu mayor enemigo no es el muro, sino tú mismo: tu propio pasado es la jaula que intenta asfixiar tu presente.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <!-- Tarjeta del Snake Game (solo una por ahora) -->
+                    <article class="portfolio-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Snake Game</h3>
+                            <p class="card-description">El clásico juego de la serpiente, desarrollado en JavaScript con canvas. ¡Pon a prueba tus reflejos!</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Canvas</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="snake.html" class="btn-card" target="_blank"><i class="fas fa-gamepad"></i> Jugar ahora</a>
+                                <!-- Enlace a GitHub (ajusta la URL si tienes el repositorio) -->
+                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/snake" class="card-link" target="_blank">Código <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Puedes añadir más proyectos aquí en el futuro -->
                 </div>
             </div>
         </section>
@@ -214,9 +234,7 @@
                     <p class="section-description">Si deseas saber más sobre mi trabajo o tienes alguna consulta, no dudes en contactarme.</p>
                 </div>
                 <div class="contact-content">
-                    <!-- Enlace a la página de contacto (formulario) -->
                     <a href="mi_contacto.html" class="btn btn-primary">Envíame un mensaje</a>
-                    <!-- Redes sociales -->
                     <div class="social-links">
                         <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="Blog de WordPress"><i class="fab fa-wordpress"></i></a>
@@ -226,7 +244,7 @@
         </section>
     </main>
 
-    <!-- ===== FOOTER PROFESIONAL ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container footer-container">
             <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
@@ -234,10 +252,10 @@
         </div>
     </footer>
 
-    <!-- ===== BOTÓN VOLVER ARRIBA ===== -->
+    <!-- Botón volver arriba -->
     <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- ===== SCRIPT PRINCIPAL (INTERACCIONES) ===== -->
+    <!-- Script principal (para menú, scroll, etc.) -->
     <script src="script.js"></script>
 </body>
 </html>
