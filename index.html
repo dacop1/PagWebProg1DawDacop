@@ -5,29 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Daniel Copete, desarrollador de aplicaciones y programador. Explora sus proyectos y ejercicios de programación.">
     <title>Daniel Copete | Portfolio</title>
-    <!-- Fuentes modernas -->
+
+    <!-- Fuentes modernas (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome para iconos -->
+
+    <!-- Font Awesome para iconos (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Hoja de estilos principal -->
+
+    <!-- Hoja de estilos principal (ajusta la ruta si es necesario) -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header con navegación fija -->
+    <!-- ===== HEADER CON NAVEGACIÓN FIJA (GLASSMORPHISM) ===== -->
     <header class="header" id="header">
         <div class="container header-container">
+            <!-- Logo / nombre -->
             <div class="logo">
-                <a href="#inicio">Daniel Copete</a>
+                <a href="index.html#inicio">Daniel Copete</a>
             </div>
+
+            <!-- Menú de navegación (con enlaces que siempre apuntan al index) -->
             <nav class="navbar" aria-label="Navegación principal">
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
                 </ul>
+                <!-- Icono hamburguesa para móviles -->
                 <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -38,7 +45,7 @@
     </header>
 
     <main>
-        <!-- Hero Section (presentación principal) -->
+        <!-- ===== HERO SECTION (PRESENTACIÓN PRINCIPAL) ===== -->
         <section id="inicio" class="hero">
             <div class="container hero-container">
                 <div class="hero-content">
@@ -46,23 +53,24 @@
                     <p class="hero-subtitle">Desarrollador de aplicaciones & apasionado por la tecnología</p>
                     <p class="hero-description">Explora mi portfolio y descubre los proyectos que he desarrollado durante mi formación.</p>
                     <div class="hero-buttons">
-                        <a href="#portfolio" class="btn btn-primary">Ver proyectos</a>
-                        <a href="#contacto" class="btn btn-outline">Contactar</a>
+                        <a href="index.html#portfolio" class="btn btn-primary">Ver proyectos</a>
+                        <a href="index.html#contacto" class="btn btn-outline">Contactar</a>
                     </div>
                 </div>
-                <!-- Puedes añadir una ilustración o imagen personal aquí si lo deseas -->
+                <!-- Espacio para una ilustración o imagen personal (opcional) -->
             </div>
         </section>
 
-        <!-- Portfolio Section (unidades convertidas en tarjetas) -->
+        <!-- ===== PORTFOLIO SECTION (TARJETAS DE PROYECTOS) ===== -->
         <section id="portfolio" class="portfolio">
             <div class="container">
                 <div class="section-header">
                     <h2>Portfolio de unidades</h2>
                     <p class="section-description">En este portafolio encontrarás mis proyectos y ejercicios realizados en programación. Cada unidad agrupa diferentes tipos de ejercicios que muestran mis progresos y habilidades.</p>
                 </div>
+
                 <div class="portfolio-grid">
-                    <!-- Tarjeta Unidad 1 -->
+                    <!-- TARJETA UNIDAD 1 - Introducción a Python -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 1 - Introducción con Python</h3>
@@ -76,7 +84,8 @@
                             </div>
                         </div>
                     </article>
-                    <!-- Tarjeta Unidad 2 -->
+
+                    <!-- TARJETA UNIDAD 2 - Arrays -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 2 - Arrays</h3>
@@ -90,7 +99,8 @@
                             </div>
                         </div>
                     </article>
-                    <!-- Tarjeta Unidad 3 -->
+
+                    <!-- TARJETA UNIDAD 3 - Java -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 3 - Java</h3>
@@ -104,7 +114,8 @@
                             </div>
                         </div>
                     </article>
-                    <!-- Tarjeta Unidad 4 -->
+
+                    <!-- TARJETA UNIDAD 4 - Java (POO) -->
                     <article class="portfolio-card">
                         <div class="card-content">
                             <h3 class="card-title">Unidad 4 - Java (POO)</h3>
@@ -118,57 +129,59 @@
                             </div>
                         </div>
                     </article>
-                    <!-- Unidad 5 (Principios de POO) -->
-                     <article class="portfolio-card">
-                            <div class="card-content">
-                                <h3 class="card-title">Unidad 5 - Principios de POO</h3>
-                                <p class="card-description">Conceptos fundamentales de la programación orientada a objetos: abstracción, encapsulamiento, herencia y polimorfismo.</p>
-                                <div class="card-tech">
-                                    <span class="tech-tag">Java</span>
-                                    <span class="tech-tag">POO</span>
-                                </div>
-                                <div class="card-links"></div>
-                                 <a href="https://github.com/DanielCopete3009/Programacion2526/tree/main/Unidad5" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                 <a href="teoria_ud5.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </article>
 
-
-
-                        <!-- Unidad 6 (Próximamente) -->
+                    <!-- TARJETA UNIDAD 5 - Principios de POO -->
                     <article class="portfolio-card">
                         <div class="card-content">
-                            <h3 class="card-title">Unidad 6 - Estructuras de datos</h3>
-                            <p class="card-description">Pilas, colas, listas enlazadas y árboles. Contenido en preparación.</p>
+                            <h3 class="card-title">Unidad 5 - Principios de POO</h3>
+                            <p class="card-description">Conceptos fundamentales de la programación orientada a objetos: abstracción, encapsulamiento, herencia y polimorfismo.</p>
                             <div class="card-tech">
-                             <span class="tech-tag">Próximamente</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">POO</span>
                             </div>
                             <div class="card-links">
-                             <span class="btn-card disabled" style="opacity:0.5; pointer-events:none;"><i class="fab fa-github"></i> GitHub</span>
-                             <span class="card-link disabled" style="opacity:0.5; pointer-events:none;">Teoría <i class="fas fa-arrow-right"></i></span>
+                                <a href="https://github.com/DanielCopete3009/Programacion2526/tree/main/Unidad5" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="teoria_ud5.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </article>
- 
 
+                    <!-- TARJETA PRÓXIMAMENTE (ejemplo 1) -->
+                    <article class="portfolio-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Próximamente</h3>
+                            <p class="card-description">Nuevo contenido en desarrollo. ¡Vuelve pronto para descubrir más proyectos!</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">Próximamente</span>
+                            </div>
+                            <div class="card-links">
+                                <span class="btn-card disabled" style="opacity:0.5; pointer-events:none;"><i class="fab fa-github"></i> GitHub</span>
+                                <span class="card-link disabled" style="opacity:0.5; pointer-events:none;">Teoría <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </article>
 
+                    <!-- TARJETA PRÓXIMAMENTE (ejemplo 2) -->
+                    <article class="portfolio-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Próximamente</h3>
+                            <p class="card-description">Estamos preparando nuevo material. Mantente atento a las actualizaciones.</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">Próximamente</span>
+                            </div>
+                            <div class="card-links">
+                                <span class="btn-card disabled" style="opacity:0.5; pointer-events:none;"><i class="fab fa-github"></i> GitHub</span>
+                                <span class="card-link disabled" style="opacity:0.5; pointer-events:none;">Teoría <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </article>
 
-
-
-                    
-
+                    <!-- Puedes añadir más tarjetas "Próximamente" copiando el bloque anterior -->
                 </div>
             </div>
         </section>
 
-                    
-
-
-
-        
-
-        <!-- Sección Sobre mí (mejorada) -->
+        <!-- ===== SOBRE MÍ ===== -->
         <section id="sobre-mi" class="about">
             <div class="container">
                 <div class="section-header">
@@ -193,7 +206,7 @@
             </div>
         </section>
 
-        <!-- Sección Contacto -->
+        <!-- ===== CONTACTO ===== -->
         <section id="contacto" class="contact">
             <div class="container">
                 <div class="section-header">
@@ -201,7 +214,9 @@
                     <p class="section-description">Si deseas saber más sobre mi trabajo o tienes alguna consulta, no dudes en contactarme.</p>
                 </div>
                 <div class="contact-content">
+                    <!-- Enlace a la página de contacto (formulario) -->
                     <a href="mi_contacto.html" class="btn btn-primary">Envíame un mensaje</a>
+                    <!-- Redes sociales -->
                     <div class="social-links">
                         <a href="https://github.com/DanielCopete3009" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="Blog de WordPress"><i class="fab fa-wordpress"></i></a>
@@ -211,7 +226,7 @@
         </section>
     </main>
 
-    <!-- Footer profesional -->
+    <!-- ===== FOOTER PROFESIONAL ===== -->
     <footer class="footer">
         <div class="container footer-container">
             <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
@@ -219,10 +234,10 @@
         </div>
     </footer>
 
-    <!-- Botón volver arriba -->
+    <!-- ===== BOTÓN VOLVER ARRIBA ===== -->
     <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Script para interacciones -->
+    <!-- ===== SCRIPT PRINCIPAL (INTERACCIONES) ===== -->
     <script src="script.js"></script>
 </body>
 </html>
