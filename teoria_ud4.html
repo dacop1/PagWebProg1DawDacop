@@ -1,57 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>...</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teoría de la Unidad 4: Programación Orientada a Objetos en Java - Daniel Copete">
+    <title>Unidad 4 - Java (POO) | Daniel Copete</title>
+    <!-- Mismos enlaces que en teoria_ud3.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mismos estilos que en teoria_ud3.html */
+        .theory-content { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+        .theory-content h2 { color: var(--accent); margin-top: 2rem; margin-bottom: 1rem; font-size: 2rem; }
+        .theory-content h3 { color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.5rem; }
+        .theory-content p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+        .theory-content ul, .theory-content ol { color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .theory-content li { margin-bottom: 0.5rem; }
+        .theory-content code { background: rgba(255,255,255,0.05); color: var(--accent); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+        .theory-content pre { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+        .theory-content pre code { background: none; color: var(--text-primary); }
+        .back-to-portfolio { margin-top: 3rem; text-align: center; }
+    </style>
+</head>
 <body>
-    <header>...</header>
+    <header class="header" id="header">... (mismo que en teoria_ud3.html) ...</header>
     <main>
         <section class="theory">
             <div class="container">
-                <div class="theory-header section-header" style="margin-top: calc(var(--header-height) + 2rem);">
+                <div class="theory-header section-header" style="margin-top: calc(var(--header-height, 80px) + 2rem);">
                     <h1>Unidad 4: Programación Orientada a Objetos en Java</h1>
-                    <p class="section-description">Clases, objetos, herencia, polimorfismo y encapsulamiento.</p>
+                    <p class="section-description">Clases, objetos, herencia, polimorfismo, encapsulamiento.</p>
                 </div>
                 <div class="theory-content">
-                    <h2>1. Conceptos de POO</h2>
+                    <h2>1. Conceptos fundamentales de POO</h2>
                     <ul>
-                        <li><strong>Clase:</strong> Plantilla para crear objetos.</li>
-                        <li><strong>Objeto:</strong> Instancia de una clase.</li>
-                        <li><strong>Herencia:</strong> Una clase puede heredar atributos y métodos de otra.</li>
-                        <li><strong>Polimorfismo:</strong> Un mismo método puede comportarse de diferentes formas.</li>
-                        <li><strong>Encapsulamiento:</strong> Ocultar detalles internos mediante modificadores de acceso (private, public).</li>
+                        <li><strong>Clase:</strong> Plantilla o molde para crear objetos. Define atributos y métodos.</li>
+                        <li><strong>Objeto:</strong> Instancia de una clase. Tiene estado (valores de atributos) y comportamiento.</li>
+                        <li><strong>Encapsulamiento:</strong> Ocultar los detalles internos de un objeto y permitir el acceso solo a través de métodos públicos (getters/setters).</li>
+                        <li><strong>Herencia:</strong> Una clase puede heredar atributos y métodos de otra clase (superclase).</li>
+                        <li><strong>Polimorfismo:</strong> Un mismo método puede comportarse de diferentes formas según el objeto que lo invoque.</li>
+                        <li><strong>Abstracción:</strong> Mostrar solo la interfaz esencial de un objeto, ocultando la complejidad interna.</li>
                     </ul>
 
-                    <h2>2. Ejemplo de clase en Java</h2>
+                    <h2>2. Definición de una clase en Java</h2>
                     <pre><code>public class Persona {
+    // Atributos (encapsulados: private)
     private String nombre;
     private int edad;
 
+    // Constructor
     public Persona(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
     }
 
+    // Métodos públicos (getters y setters)
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    // Otros métodos
     public void saludar() {
         System.out.println("Hola, soy " + nombre);
     }
 }</code></pre>
 
-                    <h2>3. Herencia</h2>
+                    <h2>3. Creación de objetos (instancias)</h2>
+                    <pre><code>public class Main {
+    public static void main(String[] args) {
+        Persona persona1 = new Persona("Daniel", 25);
+        persona1.saludar();
+        System.out.println(persona1.getNombre());
+    }
+}</code></pre>
+
+                    <h2>4. Herencia</h2>
+                    <p>Se usa la palabra clave <code>extends</code>.</p>
                     <pre><code>public class Estudiante extends Persona {
     private String carrera;
 
     public Estudiante(String nombre, int edad, String carrera) {
-        super(nombre, edad);
+        super(nombre, edad); // Llamada al constructor de la superclase
         this.carrera = carrera;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    // Sobrescritura de método (override)
+    @Override
+    public void saludar() {
+        super.saludar();
+        System.out.println("Estudio " + carrera);
     }
 }</code></pre>
 
-                    <div class="back-to-portfolio">...</div>
+                    <h2>5. Polimorfismo</h2>
+                    <p>Un objeto puede ser tratado como instancia de su superclase, pero al invocar métodos sobrescritos se ejecuta la versión de la subclase.</p>
+                    <pre><code>Persona persona = new Estudiante("Ana", 22, "Ingeniería");
+persona.saludar(); // Llama al método sobrescrito en Estudiante</code></pre>
+
+                    <h2>6. Modificadores de acceso</h2>
+                    <ul>
+                        <li><code>public</code>: Accesible desde cualquier clase.</li>
+                        <li><code>protected</code>: Accesible dentro del mismo paquete y por subclases.</li>
+                        <li><code>default</code> (sin modificador): Accesible solo dentro del mismo paquete.</li>
+                        <li><code>private</code>: Accesible solo dentro de la misma clase.</li>
+                    </ul>
+
+                    <h2>7. Clases abstractas</h2>
+                    <p>Una clase abstracta no se puede instanciar y puede contener métodos abstractos (sin implementación).</p>
+                    <pre><code>public abstract class Animal {
+    protected String nombre;
+
+    public Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public abstract void hacerSonido(); // Método abstracto
+}
+
+public class Perro extends Animal {
+    public Perro(String nombre) {
+        super(nombre);
+    }
+
+    @Override
+    public void hacerSonido() {
+        System.out.println(nombre + " dice: Guau");
+    }
+}</code></pre>
+
+                    <h2>8. Interfaces</h2>
+                    <p>Una interfaz define un contrato de métodos que las clases deben implementar. Todos los métodos son públicos y abstractos (hasta Java 7).</p>
+                    <pre><code>public interface Volador {
+    void volar();
+}
+
+public class Pajaro implements Volador {
+    @Override
+    public void volar() {
+        System.out.println("El pájaro vuela");
+    }
+}</code></pre>
+
+                    <div class="back-to-portfolio">
+                        <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer>...</footer>
-    <button>...</button>
+    <footer class="footer">... (mismo que en teoria_ud3.html) ...</footer>
+    <button id="scrollToTop" class="scroll-top">...</button>
     <script src="script.js"></script>
 </body>
 </html>
