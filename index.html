@@ -1,93 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio | Daniel Copete</title> 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <link rel="stylesheet" href="styles.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Daniel Copete, desarrollador de aplicaciones y programador. Explora sus proyectos y ejercicios de programación.">
+    <title>Daniel Copete | Portfolio</title>
+    <!-- Fuentes modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
+    <!-- Header con navegación fija -->
+    <header class="header" id="header">
         <div class="container header-container">
             <div class="logo">
-                <h1>Daniel Copete</h1>
-                <!-- Unificado el texto del portfolio -->
-                <p>Portfolio de programación | Ejercicios y conceptos</p>
+                <a href="#inicio">Daniel Copete</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="sobre_mi.html">Sobre mí</a></li>
-                    <li><a href="#temas" style="color: #4dff91;">Portafolio</a></li>
-                    <li><a href="mi_contacto.html">Contacto</a></li>
+            <nav class="navbar" aria-label="Navegación principal">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
+                <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </div>
     </header>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Mi Portfolio</h2>
-            <!-- Unificado el texto duplicado -->
-            <p>En este portafolio encontrarás mis proyectos y ejercicios realizados en programación. Cada unidad agrupa diferentes tipos de ejercicios que muestran mis progresos y habilidades.</p>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section (presentación principal) -->
+        <section id="inicio" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Daniel Copete</h1>
+                    <p class="hero-subtitle">Desarrollador de aplicaciones & apasionado por la tecnología</p>
+                    <p class="hero-description">Explora mi portfolio y descubre los proyectos que he desarrollado durante mi formación.</p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">Ver proyectos</a>
+                        <a href="#contacto" class="btn btn-outline">Contactar</a>
+                    </div>
+                </div>
+                <!-- Puedes añadir una ilustración o imagen personal aquí si lo deseas -->
+            </div>
+        </section>
 
-    <section id="temas" class="temas">
-        <div class="container tema-buttons">
-            <!-- Unidad 1 -->
-            <a href="https://github.com/DanielCopete3009/Programaci-n-1-DAW/tree/main/unidad1" class="tema-btn" target="_blank" rel="noopener noreferrer">
-                Unidad 1 - Introducción con Python
-            </a>
-            <a href="teoria_ud1.html" class="tema-btn"> <!-- Asegúrate que este archivo existe -->
-                Unidad 1 - Teoría Python
-            </a>
-            
-            <!-- Unidad 2 -->
-            <a href="https://github.com/DanielCopete3009/Programaci-n-1-DAW/tree/main/Unidad2" class="tema-btn" target="_blank" rel="noopener noreferrer">
-                Unidad 2 - Arrays
-            </a>
-            <a href="teoria_ud2.html" class="tema-btn">
-                Teoría Unidad 2 - Arrays
-            </a>
-            
-            <!-- Unidad 3 - Corregido el enlace de teoría (antes apuntaba a ud2) -->
-            <a href="https://github.com/DanielCopete3009/Programacion2526/tree/main/Unidad3/programacionud3" class="tema-btn" target="_blank" rel="noopener noreferrer"> 
-                Unidad 3 - Java
-            </a>
-            <a href="teoria_ud3.html" class="tema-btn"> <!-- Cambiado a teoria_ud3.html -->
-                Unidad 3 - Teoría Java
-            </a>
-            
-            <!-- Unidad 4 -->
-            <a href="https://github.com/DanielCopete3009/Programacion2526/tree/main/Unidad4" class="tema-btn" target="_blank" rel="noopener noreferrer"> 
-                Unidad 4 - Java (POO)
-            </a>
-            <a href="teoria_ud4.html" class="tema-btn">
-                Unidad 4 - Objetos y Java
-            </a>
-        </div>
-    </section>
+        <!-- Portfolio Section (unidades convertidas en tarjetas) -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Portfolio de unidades</h2>
+                    <p class="section-description">En este portafolio encontrarás mis proyectos y ejercicios realizados en programación. Cada unidad agrupa diferentes tipos de ejercicios que muestran mis progresos y habilidades.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <!-- Tarjeta Unidad 1 -->
+                    <article class="portfolio-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Unidad 1 - Introducción con Python</h3>
+                            <p class="card-description">Ejercicios básicos de Python: variables, condicionales, bucles y funciones.</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">Python</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/DanielCopete3009/Programaci-n-1-DAW/tree/main/unidad1" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="teoria_ud1.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Tarjeta Unidad 2 -->
+                    <article class="portfolio-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Unidad 2 - Arrays</h3>
+                            <p class="card-description">Manejo de arrays, listas y matrices en Python.</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">Python</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/DanielCopete3009/Programaci-n-1-DAW/tree/main/Unidad2" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="teoria_ud2.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Tarjeta Unidad 3 -->
+                    <article class="portfolio-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Unidad 3 - Java</h3>
+                            <p class="card-description">Introducción a Java: sintaxis básica, clases y objetos.</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">Java</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/DanielCopete3009/Programacion2526/tree/main/Unidad3/programacionud3" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="teoria_ud3.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Tarjeta Unidad 4 -->
+                    <article class="portfolio-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Unidad 4 - Java (POO)</h3>
+                            <p class="card-description">Programación Orientada a Objetos en Java: herencia, polimorfismo, etc.</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">Java</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/DanielCopete3009/Programacion2526/tree/main/Unidad4" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="teoria_ud4.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <p>Si deseas saber más sobre mi trabajo o tienes alguna consulta, no dudes en contactarme.</p>
-            <a href="mi_contacto.html" class="btn">Envíame un mensaje</a>
-        </div>
-    </section>
+        <!-- Sección Sobre mí (mejorada) -->
+        <section id="sobre-mi" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sobre mí</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Soy Daniel Copete, estudiante de Desarrollo de Aplicaciones y apasionado por la programación. Me encanta aprender nuevas tecnologías y aplicar mis conocimientos en proyectos prácticos.</p>
+                        <p>En este portfolio encontrarás una recopilación de mis ejercicios y proyectos organizados por unidades, reflejando mi evolución en el mundo del desarrollo.</p>
+                    </div>
+                    <div class="about-skills">
+                        <h3>Tecnologías que uso</h3>
+                        <div class="skills-list">
+                            <span class="skill-item"><i class="fab fa-python"></i> Python</span>
+                            <span class="skill-item"><i class="fab fa-java"></i> Java</span>
+                            <span class="skill-item"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-item"><i class="fab fa-js"></i> JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <div class="container">
+        <!-- Sección Contacto -->
+        <section id="contacto" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contacto</h2>
+                    <p class="section-description">Si deseas saber más sobre mi trabajo o tienes alguna consulta, no dudes en contactarme.</p>
+                </div>
+                <div class="contact-content">
+                    <a href="mi_contacto.html" class="btn btn-primary">Envíame un mensaje</a>
+                    <div class="social-links">
+                        <a href="https://github.com/DanielCopete3009" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="Blog de WordPress"><i class="fab fa-wordpress"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer profesional -->
+    <footer class="footer">
+        <div class="container footer-container">
             <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
-            <p>
-                Sígueme en 
-                <a href="https://github.com/DanielCopete3009" target="_blank" rel="noopener noreferrer">GitHub</a> |
-                <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">Blog de WordPress</a>
-            </p>
+            <p>Sígueme en <a href="https://github.com/DanielCopete3009" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">Blog de WordPress</a></p>
         </div>
     </footer>
 
+    <!-- Botón volver arriba -->
+    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Script para interacciones -->
+    <script src="script.js"></script>
 </body>
 </html>
