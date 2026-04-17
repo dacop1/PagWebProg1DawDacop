@@ -3,105 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teoría de la Unidad 1: Introducción a Python - Daniel Copete">
-    <title>Unidad 1 - Introducción a Python | Daniel Copete</title>
-    <!-- Fuentes e iconos (mismos que el index) -->
+    <meta name="description" content="Teoría Unidad 1: Introducción a Python — Daniel Copete">
+    <title>Unidad 1 — Introducción a Python | Daniel Copete</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilos específicos para páginas de teoría */
-        .theory-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        .theory-content h2 {
-            color: var(--accent);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-        .theory-content h3 {
-            color: var(--text-primary);
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 1.5rem;
-        }
-        .theory-content p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        .theory-content ul, .theory-content ol {
-            color: var(--text-secondary);
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .theory-content li {
-            margin-bottom: 0.5rem;
-        }
-        .theory-content code {
-            background: rgba(255,255,255,0.05);
-            color: var(--accent);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-        .theory-content pre {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-        .theory-content pre code {
-            background: none;
-            color: var(--text-primary);
-        }
-        .back-to-portfolio {
-            margin-top: 3rem;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <!-- Header (idéntico al index) -->
+
     <header class="header" id="header">
         <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">Daniel Copete</a>
-            </div>
+            <div class="logo"><a href="index.html">Daniel Copete</a></div>
             <nav class="navbar" aria-label="Navegación principal">
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#inicio"   class="nav-link">Inicio</a></li>
                     <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
-                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="index.html#sobre-mi"  class="nav-link">Sobre mí</a></li>
+                    <li><a href="mi_contacto.html"     class="nav-link">Contacto</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="theory">
+        <section class="theory-page">
             <div class="container">
-                <div class="theory-header section-header" style="margin-top: calc(var(--header-height) + 2rem);">
+
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb" aria-label="Ruta">
+                    <a href="index.html">Inicio</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <span class="breadcrumb-current">Unidad 1</span>
+                </nav>
+
+                <!-- Cabecera -->
+                <div class="theory-page-header">
                     <h1>Unidad 1: Introducción a Python</h1>
                     <p class="section-description">Conceptos básicos, sintaxis y primeros pasos con Python.</p>
                 </div>
+
+                <!-- Contenido -->
                 <div class="theory-content">
+
                     <h2>1. ¿Qué es Python?</h2>
                     <p>Python es un lenguaje de programación interpretado, de alto nivel y con una sintaxis sencilla que favorece la legibilidad del código. Es multiplataforma y multiparadigma (orientado a objetos, imperativo y funcional).</p>
-                    
+
                     <h2>2. Características principales</h2>
                     <ul>
                         <li>Tipado dinámico: no es necesario declarar el tipo de las variables.</li>
@@ -156,24 +109,38 @@ while contador < 5:
 mensaje = saludar("Daniel")
 print(mensaje)</code></pre>
 
-                    <div class="back-to-portfolio">
-                        <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+                    <!-- Navegación entre unidades -->
+                    <div class="theory-nav">
+                        <span class="theory-nav-btn theory-nav-btn--disabled">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </span>
+                        <a href="index.html#portfolio" class="btn btn-outline" style="font-size:0.88rem; padding:0.5rem 1.2rem;">
+                            <i class="fas fa-th"></i> Todas las unidades
+                        </a>
+                        <a href="teoria_ud2.html" class="theory-nav-btn">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer (idéntico al index) -->
     <footer class="footer">
         <div class="container footer-container">
             <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
-            <p>Sígueme en <a href="https://github.com/DanielCopete3009" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">Blog de WordPress</a></p>
+            <p>
+                <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">WordPress</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Botón volver arriba -->
-    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

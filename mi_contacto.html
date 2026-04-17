@@ -1,202 +1,30 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contacta con Daniel Copete, desarrollador de aplicaciones.">
     <title>Contacto | Daniel Copete</title>
-    <!-- Fuentes e iconos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilos específicos para la página de contacto */
-        .contact-page {
-            padding-top: calc(var(--header-height) + 2rem);
-            padding-bottom: 4rem;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-            margin-top: 2rem;
-        }
-        .contact-info {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 2rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .contact-info h2 {
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        .contact-info p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-        .contact-details {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-        .contact-details li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-        .contact-details i {
-            color: var(--accent);
-            font-size: 1.3rem;
-            width: 1.8rem;
-        }
-        .contact-details a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        .contact-details a:hover {
-            color: var(--accent);
-        }
-        .social-links-contact {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .social-links-contact a {
-            color: var(--text-secondary);
-            font-size: 1.8rem;
-            transition: var(--transition);
-        }
-        .social-links-contact a:hover {
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
-        .contact-form {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 2rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .contact-form h2 {
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem 1.2rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            color: var(--text-primary);
-            font-family: var(--font-primary);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(77, 255, 145, 0.1);
-        }
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        .btn-submit {
-            background: var(--accent);
-            color: var(--bg-primary);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        .btn-submit:hover {
-            background: var(--accent-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(77, 255, 145, 0.3);
-        }
-        .btn-submit i {
-            font-size: 1.1rem;
-        }
-        .form-message {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 12px;
-            text-align: center;
-            display: none;
-        }
-        .form-message.success {
-            background: rgba(77, 255, 145, 0.1);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            display: block;
-        }
-        .form-message.error {
-            background: rgba(255, 77, 77, 0.1);
-            color: #ff4d4d;
-            border: 1px solid #ff4d4d;
-            display: block;
-        }
-        .back-link {
-            margin-top: 2rem;
-            text-align: center;
-        }
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- Header (mismo que en index) -->
+
     <header class="header" id="header">
         <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">Daniel Copete</a>
-            </div>
+            <div class="logo"><a href="index.html">Daniel Copete</a></div>
             <nav class="navbar" aria-label="Navegación principal">
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#inicio"   class="nav-link">Inicio</a></li>
                     <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
-                    <li><a href="mi_contacto.html" class="nav-link active">Contacto</a></li>
+                    <li><a href="index.html#sobre-mi"  class="nav-link">Sobre mí</a></li>
+                    <li><a href="mi_contacto.html"     class="nav-link">Contacto</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </div>
             </nav>
         </div>
@@ -205,38 +33,59 @@
     <main>
         <section class="contact-page">
             <div class="container">
+
                 <div class="section-header">
-                    <h1>Contacto</h1>
-                    <p class="section-description">¿Tienes alguna pregunta o quieres trabajar conmigo? ¡Escríbeme!</p>
+                    <h2>Contacto</h2>
+                    <p class="section-description">¿Tienes alguna pregunta o propuesta? No dudes en escribirme.</p>
                 </div>
+
                 <div class="contact-grid">
-                    <!-- Información de contacto -->
+
+                    <!-- Info -->
                     <div class="contact-info">
                         <h2>Hablemos</h2>
-                        <p>Estoy disponible para proyectos, colaboraciones o simplemente para charlar sobre tecnología. Puedes contactarme a través de este formulario o mediante mis redes sociales.</p>
+                        <p>Estoy abierto a proyectos, colaboraciones o simplemente charlar sobre tecnología y programación. Escríbeme a través del formulario o encuéntrame en mis redes.</p>
                         <ul class="contact-details">
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:daniel.copete@example.com">daniel.copete@example.com</a></li>
-                            <li><i class="fas fa-phone-alt"></i> <a href="tel:+34123456789">+34 123 456 789</a></li>
-                            <li><i class="fas fa-map-marker-alt"></i> Madrid, España</li>
+                            <!-- ⚠️ Sustituye con tu email y ubicación reales -->
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:tu@email.com">tu@email.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                España
+                            </li>
+                            <li>
+                                <i class="fab fa-github"></i>
+                                <a href="https://github.com/dacop1" target="_blank" rel="noopener noreferrer">github.com/dacop1</a>
+                            </li>
                         </ul>
                         <div class="social-links-contact">
-                            <a href="https://github.com/dacop1" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="Blog WordPress"><i class="fab fa-wordpress"></i></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/dacop1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="WordPress">
+                                <i class="fab fa-wordpress"></i>
+                            </a>
+                            <!-- Añade LinkedIn cuando tengas cuenta:
+                            <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            -->
                         </div>
                     </div>
 
-                    <!-- Formulario de contacto -->
-                    <div class="contact-form">
+                    <!-- Formulario -->
+                    <div class="contact-form-card">
                         <h2>Envíame un mensaje</h2>
-                        <form id="contactForm">
+                        <form id="contactForm" novalidate>
                             <div class="form-group">
                                 <label for="name">Nombre completo *</label>
-                                <input type="text" id="name" name="name" required placeholder="Ej. Daniel Copete">
+                                <input type="text" id="name" name="name" required placeholder="Tu nombre">
                             </div>
                             <div class="form-group">
                                 <label for="email">Correo electrónico *</label>
-                                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                                <input type="email" id="email" name="email" required placeholder="tu@email.com">
                             </div>
                             <div class="form-group">
                                 <label for="subject">Asunto *</label>
@@ -246,64 +95,91 @@
                                 <label for="message">Mensaje *</label>
                                 <textarea id="message" name="message" required placeholder="Escribe tu mensaje aquí..."></textarea>
                             </div>
-                            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
-                            <div id="formMessage" class="form-message"></div>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i> Enviar mensaje
+                            </button>
+                            <div id="formMessage" class="form-message" role="alert"></div>
                         </form>
                     </div>
+
                 </div>
-                <div class="back-link">
-                    <a href="index.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+
+                <!-- Volver -->
+                <div style="text-align:center; margin-top:2.5rem;">
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Volver al inicio
+                    </a>
                 </div>
+
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
             <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
-            <p>Sígueme en <a href="https://github.com/dacop1" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">Blog de WordPress</a></p>
+            <p>
+                <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">WordPress</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Botón volver arriba -->
-    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
     <script>
-        // Manejo del formulario de contacto (simulación)
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
+        'use strict';
+        document.addEventListener('DOMContentLoaded', function () {
+            var form        = document.getElementById('contactForm');
+            var formMessage = document.getElementById('formMessage');
 
-            form.addEventListener('submit', function(e) {
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                // Validación simple (HTML5 ya valida, pero podemos añadir lógica extra)
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const subject = document.getElementById('subject').value.trim();
-                const message = document.getElementById('message').value.trim();
+                var name    = document.getElementById('name').value.trim();
+                var email   = document.getElementById('email').value.trim();
+                var subject = document.getElementById('subject').value.trim();
+                var message = document.getElementById('message').value.trim();
 
-                if (name && email && subject && message) {
-                    // Simular envío exitoso
-                    formMessage.className = 'form-message success';
-                    formMessage.textContent = '¡Mensaje enviado con éxito! Gracias por contactarme.';
-
-                    // Limpiar formulario (opcional)
-                    form.reset();
-
-                    // Ocultar mensaje después de 5 segundos
-                    setTimeout(() => {
-                        formMessage.style.display = 'none';
-                    }, 5000);
-                } else {
+                /* Validación básica */
+                if (!name || !email || !subject || !message) {
                     formMessage.className = 'form-message error';
                     formMessage.textContent = 'Por favor, completa todos los campos.';
-                    setTimeout(() => {
-                        formMessage.style.display = 'none';
-                    }, 5000);
+                    return;
                 }
+
+                /* Validar formato email */
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = 'Introduce un correo electrónico válido.';
+                    return;
+                }
+
+                /*
+                 * NOTA: Este formulario es solo visual.
+                 * Para enviar emails reales necesitas un backend o un servicio
+                 * como Formspree (https://formspree.io) o EmailJS.
+                 *
+                 * Con Formspree, cambia el action del form por:
+                 * <form action="https://formspree.io/f/TU_ID" method="POST">
+                 * y quita el addEventListener de submit.
+                 */
+
+                formMessage.className = 'form-message success';
+                formMessage.textContent = '¡Mensaje recibido! Te responderé lo antes posible.';
+                form.reset();
+
+                setTimeout(function () {
+                    formMessage.className = 'form-message';
+                    formMessage.textContent = '';
+                }, 6000);
             });
         });
     </script>

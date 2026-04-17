@@ -3,92 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teoría de la Unidad 5: Principios de la Programación Orientada a Objetos - Daniel Copete">
-    <title>Unidad 5 - Principios de POO | Daniel Copete</title>
-    <!-- Mismos enlaces -->
+    <meta name="description" content="Teoría Unidad 5: Principios de la POO — Daniel Copete">
+    <title>Unidad 5 — Principios de POO | Daniel Copete</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Mismos estilos de teoría */
-        .theory-content { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
-        .theory-content h2 { color: var(--accent); margin-top: 2rem; margin-bottom: 1rem; font-size: 2rem; }
-        .theory-content h3 { color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.5rem; }
-        .theory-content p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
-        .theory-content ul, .theory-content ol { color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.5rem; }
-        .theory-content li { margin-bottom: 0.5rem; }
-        .theory-content code { background: rgba(255,255,255,0.05); color: var(--accent); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
-        .theory-content pre { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
-        .theory-content pre code { background: none; color: var(--text-primary); }
-        .back-to-portfolio { margin-top: 3rem; text-align: center; }
-    </style>
 </head>
 <body>
-    <header class="header" id="header">... (mismo header) ...</header>
+
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">Daniel Copete</a></div>
+            <nav class="navbar" aria-label="Navegación principal">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html#inicio"   class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="index.html#sobre-mi"  class="nav-link">Sobre mí</a></li>
+                    <li><a href="mi_contacto.html"     class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <main>
-        <section class="theory">
+        <section class="theory-page">
             <div class="container">
-                <div class="theory-header section-header" style="margin-top: calc(var(--header-height, 80px) + 2rem);">
-                    <h1>Unidad 5: Principios de la Programación Orientada a Objetos</h1>
+
+                <nav class="breadcrumb" aria-label="Ruta">
+                    <a href="index.html">Inicio</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <span class="breadcrumb-current">Unidad 5</span>
+                </nav>
+
+                <div class="theory-page-header">
+                    <h1>Unidad 5: Principios de la POO</h1>
                     <p class="section-description">Abstracción, encapsulamiento, herencia y polimorfismo a fondo.</p>
                 </div>
+
                 <div class="theory-content">
+
                     <h2>Los cuatro pilares de la POO</h2>
-                    
+
                     <h3>1. Abstracción</h3>
-                    <p>La abstracción consiste en ocultar los detalles complejos y mostrar solo la funcionalidad esencial. En POO, se logra mediante clases abstractas e interfaces. Una clase abstracta puede tener métodos abstractos (sin cuerpo) que las subclases deben implementar.</p>
-                    <pre><code>// Ejemplo de abstracción
-abstract class Figura {
-    abstract double calcularArea();
+                    <p>Consiste en ocultar los detalles complejos y mostrar solo la funcionalidad esencial. Se logra mediante clases abstractas e interfaces. El usuario de la clase no necesita saber cómo funciona internamente, solo qué hace.</p>
+                    <pre><code>abstract class Figura {
+    abstract double calcularArea();  // Contrato: cada figura calcula su área
 }
 
 class Circulo extends Figura {
     private double radio;
     public Circulo(double radio) { this.radio = radio; }
+
     @Override
     double calcularArea() { return Math.PI * radio * radio; }
+}
+
+class Rectangulo extends Figura {
+    private double base, altura;
+    public Rectangulo(double b, double h) { base = b; altura = h; }
+
+    @Override
+    double calcularArea() { return base * altura; }
 }</code></pre>
 
                     <h3>2. Encapsulamiento</h3>
-                    <p>El encapsulamiento protege los datos de un objeto, permitiendo el acceso solo a través de métodos controlados (getters y setters). Se implementa usando modificadores de acceso (<code>private</code>, <code>public</code>, etc.).</p>
+                    <p>Protege los datos de un objeto. Los atributos se declaran <code>private</code> y se accede a ellos solo a través de métodos públicos controlados (getters/setters). Esto previene que datos inválidos entren al objeto.</p>
                     <pre><code>public class CuentaBancaria {
-    private double saldo; // Solo accesible dentro de la clase
+    private double saldo;  // Solo accesible dentro de la clase
 
-    public double getSaldo() {
-        return saldo;
-    }
+    public double getSaldo() { return saldo; }
 
     public void depositar(double monto) {
         if (monto > 0) saldo += monto;
+        else System.out.println("Monto inválido");
     }
 
     public void retirar(double monto) {
         if (monto > 0 && monto <= saldo) saldo -= monto;
+        else System.out.println("Fondos insuficientes o monto inválido");
     }
 }</code></pre>
 
                     <h3>3. Herencia</h3>
-                    <p>La herencia permite crear una nueva clase a partir de una existente, reutilizando atributos y métodos. En Java se usa la palabra clave <code>extends</code>. La herencia representa una relación "es-un" (ej. un Perro es un Animal).</p>
+                    <p>Permite crear nuevas clases (subclases) a partir de clases existentes (superclases), reutilizando atributos y métodos. Representa una relación "es-un" (un Coche ES UN Vehículo).</p>
                     <pre><code>class Vehiculo {
     protected String marca;
-    public void arrancar() { System.out.println("Vehículo arrancando"); }
+    protected int velocidadMax;
+
+    public Vehiculo(String marca, int velocidadMax) {
+        this.marca        = marca;
+        this.velocidadMax = velocidadMax;
+    }
+
+    public void arrancar() {
+        System.out.println(marca + " arrancando...");
+    }
 }
 
 class Coche extends Vehiculo {
     private int numeroPuertas;
-    public void arrancar() { // Sobrescritura
-        System.out.println("Coche arrancando");
+
+    public Coche(String marca, int velMax, int puertas) {
+        super(marca, velMax);
+        this.numeroPuertas = puertas;
+    }
+
+    @Override
+    public void arrancar() {
+        System.out.println("Coche " + marca + " arrancando con " + numeroPuertas + " puertas");
     }
 }</code></pre>
 
                     <h3>4. Polimorfismo</h3>
-                    <p>El polimorfismo permite que un objeto pueda adoptar múltiples formas. En la práctica, significa que una referencia de tipo superclase puede apuntar a un objeto de una subclase, y el método invocado se determina en tiempo de ejecución (dynamic binding).</p>
-                    <pre><code>Vehiculo miVehiculo = new Coche();
-miVehiculo.arrancar(); // Llama al método arrancar() de Coche
+                    <p>Un objeto puede adoptar múltiples formas. Una referencia de superclase puede apuntar a cualquier subclase, y el método ejecutado se decide en tiempo de ejecución (dynamic binding).</p>
+                    <pre><code>// Polimorfismo con herencia
+Vehiculo v = new Coche("Toyota", 180, 4);
+v.arrancar(); // Ejecuta el arrancar() de Coche, no de Vehiculo
 
-// Otro ejemplo con interfaces
+// Polimorfismo con interfaces
 interface Sonido {
     void hacerSonido();
 }
@@ -101,84 +140,110 @@ class Gato implements Sonido {
     public void hacerSonido() { System.out.println("Miau"); }
 }
 
-// Uso polimórfico
-Sonido s1 = new Perro();
-Sonido s2 = new Gato();
-s1.hacerSonido(); // Guau
-s2.hacerSonido(); // Miau</code></pre>
+// Mismo tipo (Sonido), distintos comportamientos
+Sonido[] animales = { new Perro(), new Gato() };
+for (Sonido a : animales) {
+    a.hacerSonido(); // Guau, luego Miau
+}</code></pre>
 
                     <h2>Beneficios de la POO</h2>
                     <ul>
-                        <li><strong>Reutilización de código:</strong> Herencia y composición.</li>
-                        <li><strong>Mantenibilidad:</strong> Código más organizado y fácil de modificar.</li>
-                        <li><strong>Escalabilidad:</strong> Permite añadir nuevas funcionalidades sin afectar lo existente.</li>
-                        <li><strong>Modelado cercano a la realidad:</strong> Representa entidades del mundo real.</li>
+                        <li><strong>Reutilización de código:</strong> herencia evita duplicar lógica.</li>
+                        <li><strong>Mantenibilidad:</strong> cambios en una clase no rompen otras.</li>
+                        <li><strong>Escalabilidad:</strong> añadir nuevas funcionalidades sin tocar lo existente.</li>
+                        <li><strong>Modelado real:</strong> representa entidades del mundo real de forma natural.</li>
                     </ul>
 
-                    <h2>Ejemplo integrador</h2>
-                    <pre><code>// Abstracción
+                    <h2>Ejemplo integrador completo</h2>
+                    <pre><code>// Abstracción + Encapsulamiento
 abstract class Empleado {
     protected String nombre;
     protected double salarioBase;
 
     public Empleado(String nombre, double salarioBase) {
-        this.nombre = nombre;
+        this.nombre      = nombre;
         this.salarioBase = salarioBase;
     }
 
-    public abstract double calcularSalario();
+    public abstract double calcularSalario(); // Cada tipo lo implementa distinto
 
     public void mostrarInfo() {
-        System.out.println(nombre + " - Salario: " + calcularSalario());
+        System.out.printf("%s → Salario: %.2f€%n", nombre, calcularSalario());
     }
 }
 
-// Herencia y polimorfismo
+// Herencia + Polimorfismo
 class EmpleadoFijo extends Empleado {
     private double bonificacion;
 
-    public EmpleadoFijo(String nombre, double salarioBase, double bonificacion) {
-        super(nombre, salarioBase);
-        this.bonificacion = bonificacion;
+    public EmpleadoFijo(String nombre, double base, double bono) {
+        super(nombre, base);
+        this.bonificacion = bono;
     }
 
     @Override
-    public double calcularSalario() {
-        return salarioBase + bonificacion;
-    }
+    public double calcularSalario() { return salarioBase + bonificacion; }
 }
 
 class EmpleadoPorHoras extends Empleado {
-    private int horasTrabajadas;
-    private double tarifaHora;
+    private int    horas;
+    private double tarifa;
 
-    public EmpleadoPorHoras(String nombre, double tarifaHora, int horasTrabajadas) {
+    public EmpleadoPorHoras(String nombre, double tarifa, int horas) {
         super(nombre, 0);
-        this.tarifaHora = tarifaHora;
-        this.horasTrabajadas = horasTrabajadas;
+        this.tarifa = tarifa;
+        this.horas  = horas;
     }
 
     @Override
-    public double calcularSalario() {
-        return tarifaHora * horasTrabajadas;
-    }
+    public double calcularSalario() { return tarifa * horas; }
 }
 
-// Uso
-Empleado emp1 = new EmpleadoFijo("Carlos", 2000, 500);
-Empleado emp2 = new EmpleadoPorHoras("Ana", 15, 160);
-emp1.mostrarInfo();
-emp2.mostrarInfo();</code></pre>
+// Uso polimórfico
+public class Main {
+    public static void main(String[] args) {
+        Empleado[] plantilla = {
+            new EmpleadoFijo("Carlos", 2000, 500),
+            new EmpleadoPorHoras("Ana", 15, 160)
+        };
 
-                    <div class="back-to-portfolio">
-                        <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+        for (Empleado e : plantilla) {
+            e.mostrarInfo(); // Cada uno calcula su salario a su manera
+        }
+    }
+}</code></pre>
+
+                    <!-- Navegación entre unidades -->
+                    <div class="theory-nav">
+                        <a href="teoria_ud4.html" class="theory-nav-btn">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </a>
+                        <a href="index.html#portfolio" class="btn btn-outline" style="font-size:0.88rem; padding:0.5rem 1.2rem;">
+                            <i class="fas fa-th"></i> Todas las unidades
+                        </a>
+                        <span class="theory-nav-btn theory-nav-btn--disabled">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </span>
                     </div>
+
                 </div>
             </div>
         </section>
     </main>
-    <footer class="footer">... (mismo footer) ...</footer>
-    <button id="scrollToTop" class="scroll-top">...</button>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
+            <p>
+                <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">WordPress</a>
+            </p>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba"></button>
+
     <script src="script.js"></script>
 </body>
 </html>

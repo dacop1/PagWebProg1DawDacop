@@ -3,149 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teoría de la Unidad 3: Introducción a Java - Daniel Copete">
-    <title>Unidad 3 - Introducción a Java | Daniel Copete</title>
-    <!-- Fuentes e iconos -->
+    <meta name="description" content="Teoría Unidad 3: Introducción a Java — Daniel Copete">
+    <title>Unidad 3 — Introducción a Java | Daniel Copete</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Estilos específicos para teoría -->
-    <style>
-        .theory-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        .theory-content h2 {
-            color: var(--accent);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-        .theory-content h3 {
-            color: var(--text-primary);
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 1.5rem;
-        }
-        .theory-content p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        .theory-content ul, .theory-content ol {
-            color: var(--text-secondary);
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .theory-content li {
-            margin-bottom: 0.5rem;
-        }
-        .theory-content code {
-            background: rgba(255,255,255,0.05);
-            color: var(--accent);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-        .theory-content pre {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-        .theory-content pre code {
-            background: none;
-            color: var(--text-primary);
-        }
-        .back-to-portfolio {
-            margin-top: 3rem;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <!-- Header completo (con enlaces al index) -->
+
     <header class="header" id="header">
         <div class="container header-container">
-            <div class="logo">
-                <a href="index.html#inicio">Daniel Copete</a>
-            </div>
+            <div class="logo"><a href="index.html">Daniel Copete</a></div>
             <nav class="navbar" aria-label="Navegación principal">
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#inicio"   class="nav-link">Inicio</a></li>
                     <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
-                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="index.html#sobre-mi"  class="nav-link">Sobre mí</a></li>
+                    <li><a href="mi_contacto.html"     class="nav-link">Contacto</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="theory">
+        <section class="theory-page">
             <div class="container">
-                <!-- Ajuste de margen superior por header fijo -->
-                <div class="theory-header section-header" style="margin-top: calc(var(--header-height, 80px) + 2rem);">
+
+                <nav class="breadcrumb" aria-label="Ruta">
+                    <a href="index.html">Inicio</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <span class="breadcrumb-current">Unidad 3</span>
+                </nav>
+
+                <div class="theory-page-header">
                     <h1>Unidad 3: Introducción a Java</h1>
                     <p class="section-description">Sintaxis básica, tipos de datos y estructura de un programa Java.</p>
                 </div>
+
                 <div class="theory-content">
+
                     <h2>1. ¿Qué es Java?</h2>
-                    <p>Java es un lenguaje de programación orientado a objetos, compilado y multiplataforma gracias a la máquina virtual de Java (JVM). Fue desarrollado por Sun Microsystems (ahora Oracle) y es uno de los lenguajes más utilizados en el mundo.</p>
+                    <p>Java es un lenguaje de programación orientado a objetos, compilado y multiplataforma gracias a la máquina virtual (JVM). Fue desarrollado por Sun Microsystems (ahora Oracle) y es uno de los más utilizados en el mundo.</p>
 
                     <h2>2. Características principales</h2>
                     <ul>
-                        <li><strong>Orientado a objetos:</strong> Todo en Java (excepto tipos primitivos) son objetos.</li>
-                        <li><strong>Independiente de la plataforma:</strong> El código compilado (bytecode) se ejecuta en cualquier sistema que tenga una JVM.</li>
-                        <li><strong>Recolección automática de memoria:</strong> El programador no necesita gestionar la memoria manualmente.</li>
-                        <li><strong>Seguro y robusto:</strong> Tiene mecanismos que evitan accesos indebidos a memoria.</li>
+                        <li><strong>Orientado a objetos:</strong> todo (excepto tipos primitivos) son objetos.</li>
+                        <li><strong>Independiente de la plataforma:</strong> el bytecode se ejecuta en cualquier sistema con JVM.</li>
+                        <li><strong>Gestión automática de memoria:</strong> recolector de basura integrado.</li>
+                        <li><strong>Seguro y robusto:</strong> mecanismos que evitan accesos indebidos a memoria.</li>
                     </ul>
 
                     <h2>3. Estructura de un programa Java</h2>
-                    <p>Todo programa Java debe tener al menos una clase y un método <code>main</code> que es el punto de entrada.</p>
+                    <p>Todo programa Java debe tener al menos una clase y un método <code>main</code> como punto de entrada.</p>
                     <pre><code>public class HolaMundo {
     public static void main(String[] args) {
         System.out.println("Hola, mundo!");
     }
 }</code></pre>
-                    <p><strong>Explicación:</strong></p>
-                    <ul>
-                        <li><code>public class HolaMundo</code> → Define una clase pública llamada HolaMundo.</li>
-                        <li><code>public static void main(String[] args)</code> → Método principal.</li>
-                        <li><code>System.out.println()</code> → Imprime en consola.</li>
-                    </ul>
 
                     <h2>4. Tipos de datos primitivos</h2>
                     <ul>
-                        <li><code>byte</code> → 8 bits (-128 a 127)</li>
-                        <li><code>short</code> → 16 bits (-32,768 a 32,767)</li>
-                        <li><code>int</code> → 32 bits (entero típico)</li>
-                        <li><code>long</code> → 64 bits (requiere sufijo L)</li>
-                        <li><code>float</code> → 32 bits (decimal, sufijo f)</li>
-                        <li><code>double</code> → 64 bits (decimal)</li>
-                        <li><code>char</code> → 16 bits (caracter Unicode, comillas simples)</li>
-                        <li><code>boolean</code> → true o false</li>
+                        <li><code>byte</code>   → 8 bits (-128 a 127)</li>
+                        <li><code>short</code>  → 16 bits</li>
+                        <li><code>int</code>    → 32 bits (entero típico)</li>
+                        <li><code>long</code>   → 64 bits (sufijo L)</li>
+                        <li><code>float</code>  → 32 bits decimal (sufijo f)</li>
+                        <li><code>double</code> → 64 bits decimal</li>
+                        <li><code>char</code>   → 16 bits, caracter Unicode</li>
+                        <li><code>boolean</code>→ true o false</li>
                     </ul>
 
                     <h2>5. Variables y constantes</h2>
-                    <pre><code>int edad = 25;
-double precio = 19.99;
-char letra = 'A';
+                    <pre><code>int edad        = 25;
+double precio   = 19.99;
+char letra      = 'A';
 boolean esMayor = true;
 
-// Constante (final)
-final double PI = 3.1416;</code></pre>
+final double PI = 3.1416; // Constante</code></pre>
 
                     <h2>6. Estructuras de control</h2>
                     <h3>Condicional if-else</h3>
@@ -159,14 +100,9 @@ if (nota >= 60) {
                     <h3>Switch</h3>
                     <pre><code>int dia = 2;
 switch (dia) {
-    case 1:
-        System.out.println("Lunes");
-        break;
-    case 2:
-        System.out.println("Martes");
-        break;
-    default:
-        System.out.println("Otro día");
+    case 1: System.out.println("Lunes");  break;
+    case 2: System.out.println("Martes"); break;
+    default: System.out.println("Otro");
 }</code></pre>
 
                     <h3>Bucles</h3>
@@ -178,25 +114,20 @@ for (int i = 0; i < 5; i++) {
 // while
 int j = 0;
 while (j < 5) {
-    System.out.println(j);
-    j++;
+    System.out.println(j++);
 }</code></pre>
 
-                    <h2>7. Arrays</h2>
-                    <pre><code>// Declaración e inicialización
-int[] numeros = new int[5];
+                    <h2>7. Arrays en Java</h2>
+                    <pre><code>int[] numeros = new int[5];
 numeros[0] = 10;
 
-// Declaración con valores
 String[] nombres = {"Ana", "Luis", "Carlos"};
 
-// Recorrer array
 for (int i = 0; i < nombres.length; i++) {
     System.out.println(nombres[i]);
 }</code></pre>
 
-                    <h2>8. Entrada y salida básica</h2>
-                    <p>Para leer datos del teclado se usa la clase <code>Scanner</code> (del paquete <code>java.util</code>).</p>
+                    <h2>8. Entrada de datos con Scanner</h2>
                     <pre><code>import java.util.Scanner;
 
 public class Entrada {
@@ -209,26 +140,38 @@ public class Entrada {
     }
 }</code></pre>
 
-                    <div class="back-to-portfolio">
-                        <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Volver al portfolio</a>
+                    <div class="theory-nav">
+                        <a href="teoria_ud2.html" class="theory-nav-btn">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </a>
+                        <a href="index.html#portfolio" class="btn btn-outline" style="font-size:0.88rem; padding:0.5rem 1.2rem;">
+                            <i class="fas fa-th"></i> Todas las unidades
+                        </a>
+                        <a href="teoria_ud4.html" class="theory-nav-btn">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer completo -->
     <footer class="footer">
         <div class="container footer-container">
             <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
-            <p>Sígueme en <a href="https://github.com/DanielCopete3009" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">Blog de WordPress</a></p>
+            <p>
+                <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">WordPress</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Botón volver arriba -->
-    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Script principal -->
     <script src="script.js"></script>
 </body>
 </html>

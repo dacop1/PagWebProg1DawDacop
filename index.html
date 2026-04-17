@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Daniel Copete, desarrollador de aplicaciones y programador. Explora sus proyectos y ejercicios de programación.">
+    <meta name="description" content="Portfolio de Daniel Copete, estudiante de DAW. Ejercicios, proyectos y teoría de programación en Python y Java.">
+    <meta name="author" content="Daniel Copete">
     <title>Daniel Copete | Portfolio</title>
-
-    <!-- Fuentes modernas (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome para iconos (versión 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ===== HEADER CON NAVEGACIÓN FIJA ===== -->
+
+    <!-- ===== HEADER ===== -->
     <header class="header" id="header">
         <div class="container header-container">
             <div class="logo">
@@ -26,11 +22,10 @@
             </div>
             <nav class="navbar" aria-label="Navegación principal">
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#inicio"   class="nav-link">Inicio</a></li>
                     <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="index.html#proyectos" class="nav-link">Proyectos</a></li>
-                    <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
-                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="index.html#sobre-mi"  class="nav-link">Sobre mí</a></li>
+                    <li><a href="mi_contacto.html"     class="nav-link">Contacto</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
                     <span class="bar"></span>
@@ -42,162 +37,196 @@
     </header>
 
     <main>
-        <!-- ===== HERO SECTION ===== -->
+
+        <!-- ===== HERO ===== -->
         <section id="inicio" class="hero">
             <div class="container hero-container">
+
                 <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Estudiante de DAW · 1º Curso
+                    </div>
                     <h1 class="hero-title">Daniel Copete</h1>
-                    <p class="hero-subtitle">Desarrollador de aplicaciones & apasionado por la tecnología</p>
-                    <p class="hero-description">Explora mi portfolio y descubre los proyectos que he desarrollado durante mi formación.</p>
+                    <p class="hero-subtitle">Desarrollador de aplicaciones &amp; apasionado por la tecnología</p>
+                    <p class="hero-description">Aquí recopilo todo lo que aprendo: ejercicios, teoría y proyectos organizados por unidades.</p>
                     <div class="hero-buttons">
-                        <a href="index.html#portfolio" class="btn btn-primary">Ver unidades</a>
-                        <a href="index.html#proyectos" class="btn btn-outline">Ver proyectos</a>
+                        <a href="index.html#portfolio" class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i> Ver unidades
+                        </a>
+                        <a href="mi_contacto.html" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Contactar
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Unidades</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Lenguajes</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">1º</span>
+                            <span class="stat-label">DAW</span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Ventana de código decorativa -->
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="window-title">daniel.py</span>
+                        </div>
+                        <div class="window-body">
+                            <div class="code-line"><span class="code-keyword">class</span> <span class="code-class">Daniel</span><span class="code-punct">:</span></div>
+                            <div class="code-line indent"><span class="code-keyword">def</span> <span class="code-fn">__init__</span><span class="code-punct">(self):</span></div>
+                            <div class="code-line indent2"><span class="code-var">self</span><span class="code-punct">.nombre =</span> <span class="code-string">"Daniel Copete"</span></div>
+                            <div class="code-line indent2"><span class="code-var">self</span><span class="code-punct">.rol    =</span> <span class="code-string">"Dev en formación"</span></div>
+                            <div class="code-line indent2"><span class="code-var">self</span><span class="code-punct">.skills =</span> <span class="code-punct">[</span></div>
+                            <div class="code-line indent3"><span class="code-string">"Python"</span><span class="code-punct">,</span> <span class="code-string">"Java"</span><span class="code-punct">,</span></div>
+                            <div class="code-line indent3"><span class="code-string">"HTML"</span><span class="code-punct">,</span> <span class="code-string">"CSS"</span><span class="code-punct">,</span> <span class="code-string">"JS"</span></div>
+                            <div class="code-line indent2"><span class="code-punct">]</span></div>
+                            <div class="code-line">&nbsp;</div>
+                            <div class="code-line indent"><span class="code-keyword">def</span> <span class="code-fn">aprender</span><span class="code-punct">(self):</span></div>
+                            <div class="code-line indent2"><span class="code-keyword">return</span> <span class="code-string">"Siempre 🚀"</span></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- ===== PORTFOLIO DE UNIDADES (EJERCICIOS ACADÉMICOS) ===== -->
+        <!-- ===== PORTFOLIO ===== -->
         <section id="portfolio" class="portfolio">
             <div class="container">
                 <div class="section-header">
                     <h2>Unidades didácticas</h2>
-                    <p class="section-description">Ejercicios y prácticas realizadas durante mi formación en programación.</p>
+                    <p class="section-description">Ejercicios y teoría organizados por unidades durante mi formación en programación.</p>
                 </div>
                 <div class="portfolio-grid">
-                    <!-- Unidad 1 -->
+
                     <article class="portfolio-card">
+                        <div class="card-number">01</div>
                         <div class="card-content">
-                            <h3 class="card-title">Unidad 1 - Introducción con Python</h3>
-                            <p class="card-description">Ejercicios básicos de Python: variables, condicionales, bucles y funciones.</p>
+                            <h3 class="card-title">Introducción con Python</h3>
+                            <p class="card-description">Variables, condicionales, bucles y funciones. Primeros pasos con Python desde cero.</p>
                             <div class="card-tech">
                                 <span class="tech-tag">Python</span>
                             </div>
                             <div class="card-links">
-                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_1" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="teoria_ud1.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_1" class="btn-card" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="teoria_ud1.html" class="card-link">
+                                    Teoría <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Unidad 2 -->
                     <article class="portfolio-card">
+                        <div class="card-number">02</div>
                         <div class="card-content">
-                            <h3 class="card-title">Unidad 2 - Arrays</h3>
-                            <p class="card-description">Manejo de arrays, listas y matrices en Python.</p>
+                            <h3 class="card-title">Arrays y listas</h3>
+                            <p class="card-description">Manejo de arrays, listas y matrices. Operaciones, métodos y comparativa Python / Java.</p>
                             <div class="card-tech">
                                 <span class="tech-tag">Python</span>
                             </div>
                             <div class="card-links">
-                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_2" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="teoria_ud2.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_2" class="btn-card" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="teoria_ud2.html" class="card-link">
+                                    Teoría <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Unidad 3 -->
                     <article class="portfolio-card">
+                        <div class="card-number">03</div>
                         <div class="card-content">
-                            <h3 class="card-title">Unidad 3 - Java</h3>
-                            <p class="card-description">Introducción a Java: sintaxis básica, clases y objetos.</p>
+                            <h3 class="card-title">Introducción a Java</h3>
+                            <p class="card-description">Sintaxis básica, tipos de datos, estructuras de control y entrada/salida con Scanner.</p>
                             <div class="card-tech">
                                 <span class="tech-tag">Java</span>
                             </div>
                             <div class="card-links">
-                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_3" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="teoria_ud3.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_3" class="btn-card" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="teoria_ud3.html" class="card-link">
+                                    Teoría <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Unidad 4 -->
                     <article class="portfolio-card">
+                        <div class="card-number">04</div>
                         <div class="card-content">
-                            <h3 class="card-title">Unidad 4 - Java (POO)</h3>
-                            <p class="card-description">Programación Orientada a Objetos en Java: herencia, polimorfismo, etc.</p>
-                            <div class="card-tech">
-                                <span class="tech-tag">Java</span>
-                            </div>
-                            <div class="card-links">
-                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_4" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="teoria_ud4.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Unidad 5 -->
-                    <article class="portfolio-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Unidad 5 - Principios de POO</h3>
-                            <p class="card-description">Abstracción, encapsulamiento, herencia y polimorfismo.</p>
+                            <h3 class="card-title">Java — POO</h3>
+                            <p class="card-description">Clases, objetos, herencia, polimorfismo, clases abstractas e interfaces en Java.</p>
                             <div class="card-tech">
                                 <span class="tech-tag">Java</span>
                                 <span class="tech-tag">POO</span>
                             </div>
                             <div class="card-links">
-                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_5" class="btn-card" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="teoria_ud5.html" class="card-link">Teoría <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_4" class="btn-card" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="teoria_ud4.html" class="card-link">
+                                    Teoría <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Tarjetas "Próximamente" (máximo 2) -->
                     <article class="portfolio-card">
+                        <div class="card-number">05</div>
                         <div class="card-content">
-                            <h3 class="card-title">Próximamente</h3>
-                            <p class="card-description">Nuevo contenido en desarrollo. ¡Vuelve pronto!</p>
+                            <h3 class="card-title">Principios de POO</h3>
+                            <p class="card-description">Los 4 pilares: abstracción, encapsulamiento, herencia y polimorfismo a fondo.</p>
                             <div class="card-tech">
-                                <span class="tech-tag">Próximamente</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">POO</span>
                             </div>
                             <div class="card-links">
-                                <span class="btn-card disabled" style="opacity:0.5; pointer-events:none;"><i class="fab fa-github"></i> GitHub</span>
-                                <span class="card-link disabled" style="opacity:0.5; pointer-events:none;">Teoría <i class="fas fa-arrow-right"></i></span>
+                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/Unidad_5" class="btn-card" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="teoria_ud5.html" class="card-link">
+                                    Teoría <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </article>
-                    <article class="portfolio-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Próximamente</h3>
-                            <p class="card-description">Estamos preparando nuevo material. Mantente atento.</p>
-                            <div class="card-tech">
-                                <span class="tech-tag">Próximamente</span>
-                            </div>
-                            <div class="card-links">
-                                <span class="btn-card disabled" style="opacity:0.5; pointer-events:none;"><i class="fab fa-github"></i> GitHub</span>
-                                <span class="card-link disabled" style="opacity:0.5; pointer-events:none;">Teoría <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
 
-        <!-- ===== PROYECTOS DESTACADOS (AQUÍ VA EL SNAKE GAME) ===== -->
-        <section id="Juego" class="portfolio">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Juego</h2>
-                    <p class="section-description">Los juegos son experiencias interactivas diseñadas para entretener, desafiar la mente o poner a prueba tus reflejos. Se basan en reglas sencillas y objetivos claros que transforman el tiempo libre en una aventura adictiva y gratificante.
-</p>
-                </div>
-                <div class="portfolio-grid">
-                    <!-- Tarjeta del Snake Game (solo una por ahora) -->
-                    <article class="portfolio-card">
+                    <!-- Próximamente: unidades 6, 7 y 8 -->
+                    <article class="portfolio-card portfolio-card--coming">
+                        <div class="card-number coming-number">···</div>
                         <div class="card-content">
-                            <h3 class="card-title">Snake Game</h3>
-                            <p class="card-description">Cada bocado es un triunfo y una amenaza: al alimentarte, tu cuerpo se expande y el tablero se vuelve un laberinto de escamas. Lo que empieza como una danza libre termina en una coreografía de precisión. Aquí, tu mayor enemigo no es el muro, sino tú mismo: tu propio pasado es la jaula que intenta asfixiar tu presente.</p>
+                            <h3 class="card-title">Unidades 6 · 7 · 8</h3>
+                            <p class="card-description">Contenido en desarrollo. Se publicará conforme avance el curso.</p>
                             <div class="card-tech">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Canvas</span>
+                                <span class="tech-tag tech-tag--muted">Próximamente</span>
                             </div>
                             <div class="card-links">
-                                <a href="snake.html" class="btn-card" target="_blank"><i class="fas fa-gamepad"></i> Jugar ahora</a>
-                                <!-- Enlace a GitHub (ajusta la URL si tienes el repositorio) -->
-                                <a href="https://github.com/dacop1/programacion_1_daw/tree/main/snake" class="card-link" target="_blank">Código <i class="fab fa-github"></i></a>
+                                <span class="coming-label">
+                                    <i class="fas fa-clock"></i> En progreso
+                                </span>
                             </div>
                         </div>
                     </article>
-                    <!-- Puedes añadir más proyectos aquí en el futuro -->
+
                 </div>
             </div>
         </section>
@@ -207,11 +236,15 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Sobre mí</h2>
+                    <p class="section-description">Un poco de contexto sobre quién soy y qué estoy aprendiendo.</p>
                 </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Soy Daniel Copete, estudiante de Desarrollo de Aplicaciones y apasionado por la programación. Me encanta aprender nuevas tecnologías y aplicar mis conocimientos en proyectos prácticos.</p>
-                        <p>En este portfolio encontrarás una recopilación de mis ejercicios y proyectos organizados por unidades, reflejando mi evolución en el mundo del desarrollo.</p>
+                        <p>Soy Daniel Copete, estudiante de <strong>1º de Desarrollo de Aplicaciones Web (DAW)</strong>. Me apasiona la programación y este portfolio es mi espacio para documentar y compartir todo lo que aprendo.</p>
+                        <p>Empecé con Python, pasé a Java y la Programación Orientada a Objetos, y sigo avanzando unidad a unidad. Aprendo haciendo.</p>
+                        <a href="mi_contacto.html" class="btn btn-primary" style="margin-top:1rem;">
+                            <i class="fas fa-paper-plane"></i> Hablemos
+                        </a>
                     </div>
                     <div class="about-skills">
                         <h3>Tecnologías que uso</h3>
@@ -222,41 +255,60 @@
                             <span class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</span>
                             <span class="skill-item"><i class="fab fa-js"></i> JavaScript</span>
                         </div>
+                        <div class="about-links">
+                            <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer" class="about-link">
+                                <i class="fab fa-github"></i> Ver repositorio en GitHub
+                            </a>
+                            <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer" class="about-link">
+                                <i class="fab fa-wordpress"></i> Blog de WordPress
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== CONTACTO ===== -->
+        <!-- ===== CONTACTO CTA ===== -->
         <section id="contacto" class="contact">
             <div class="container">
-                <div class="section-header">
-                    <h2>Contacto</h2>
-                    <p class="section-description">Si deseas saber más sobre mi trabajo o tienes alguna consulta, no dudes en contactarme.</p>
-                </div>
-                <div class="contact-content">
-                    <a href="mi_contacto.html" class="btn btn-primary">Envíame un mensaje</a>
-                    <div class="social-links">
-                        <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="Blog de WordPress"><i class="fab fa-wordpress"></i></a>
+                <div class="contact-cta">
+                    <h2>¿Tienes alguna pregunta?</h2>
+                    <p>Estoy aprendiendo y siempre abierto a feedback, colaboraciones o simplemente charlar sobre tecnología.</p>
+                    <div class="contact-actions">
+                        <a href="mi_contacto.html" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i> Envíame un mensaje
+                        </a>
+                        <div class="social-links">
+                            <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="Blog WordPress">
+                                <i class="fab fa-wordpress"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container footer-container">
             <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
-            <p>Sígueme en <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">Blog de WordPress</a></p>
+            <p>
+                <a href="https://github.com/dacop1/programacion_1_daw" target="_blank" rel="noopener noreferrer">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="https://dcopjim.wordpress.com/" target="_blank" rel="noopener noreferrer">WordPress</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Botón volver arriba -->
-    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    <button id="scrollToTop" class="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Script principal (para menú, scroll, etc.) -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,124 +1,163 @@
 /**
- * script.js - Funcionalidades interactivas para el portfolio
- * 
- * Incluye:
- * - Efecto de scroll en el header
- * - Menú hamburguesa para móviles
- * - Scroll suave para enlaces internos (funciona incluso desde otras páginas)
- * - Botón "volver arriba"
- * - Cierre automático del menú al hacer clic en un enlace
+ * script.js — Portfolio Daniel Copete
  */
-
 'use strict';
 
-// Esperamos a que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', function() {
-    // ===== ELEMENTOS DEL DOM =====
-    const header = document.getElementById('header');
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const headerHeight = 80; // Misma altura definida en CSS (var(--header-height))
+document.addEventListener('DOMContentLoaded', function () {
 
-    // ===== FUNCIÓN PARA AJUSTAR EL SCROLL SUAVE CUANDO SE LLEGA CON ANCLA =====
-    // Si la URL contiene un hash (ej. index.html#portfolio), hacemos scroll suave
+    var header       = document.getElementById('header');
+    var hamburger    = document.getElementById('hamburger');
+    var navMenu      = document.getElementById('nav-menu');
+    var scrollTopBtn = document.getElementById('scrollToTop');
+    var navLinks     = document.querySelectorAll('.nav-link');
+    var HEADER_H     = 70;
+
+    /* ── UTILIDADES ── */
+    function closeMenu() {
+        if (hamburger) hamburger.classList.remove('active');
+        if (navMenu)   navMenu.classList.remove('active');
+    }
+
+    function setActiveLink(matchHref) {
+        navLinks.forEach(function (l) {
+            l.classList.toggle('active', l.getAttribute('href') === matchHref);
+        });
+    }
+
+    /* ── SCROLL: header + botón arriba ── */
+    window.addEventListener('scroll', function () {
+        if (header)       header.classList.toggle('scrolled', window.scrollY > 40);
+        if (scrollTopBtn) scrollTopBtn.classList.toggle('show',  window.scrollY > 280);
+    }, { passive: true });
+
+    /* ── BOTÓN VOLVER ARRIBA ── */
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    /* ── HAMBURGUESA ── */
+    if (hamburger) {
+        hamburger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var open = navMenu && navMenu.classList.contains('active');
+            if (open) {
+                closeMenu();
+            } else {
+                hamburger.classList.add('active');
+                if (navMenu) navMenu.classList.add('active');
+            }
+        });
+        hamburger.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hamburger.click(); }
+        });
+    }
+
+    /* Cerrar menú al hacer clic fuera */
+    document.addEventListener('click', function (e) {
+        if (!navMenu || !hamburger) return;
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
+
+    /* Cerrar con Escape */
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+    });
+
+    /* ── NAV LINKS ── */
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            closeMenu();
+
+            var href    = this.getAttribute('href') || '';
+            var hashIdx = href.indexOf('#');
+
+            /* Sin hash → navegación normal (ej. mi_contacto.html) */
+            if (hashIdx === -1) return;
+
+            var file     = href.substring(0, hashIdx);
+            var hash     = href.substring(hashIdx + 1);
+            var currFile = window.location.pathname.split('/').pop() || 'index.html';
+            var sameFile = (file === '' || file === currFile);
+
+            if (sameFile && hash) {
+                /* Misma página: scroll suave */
+                e.preventDefault();
+                var target = document.getElementById(hash);
+                if (target) {
+                    var top = target.getBoundingClientRect().top + window.scrollY - HEADER_H;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                    history.pushState(null, null, '#' + hash);
+                }
+            }
+            /*
+             * Si file !== currFile (ej. clic en "Inicio" desde teoria_ud1.html):
+             * se deja navegar al navegador normalmente → carga index.html#inicio
+             */
+        });
+    });
+
+    /* ── SCROLL A HASH AL CARGAR (ej. index.html#portfolio) ── */
     if (window.location.hash) {
-        // Quitamos el # del hash
-        const hash = window.location.hash.substring(1); // "portfolio", "sobre-mi", etc.
-        const targetSection = document.getElementById(hash);
-        if (targetSection) {
-            // Pequeño retraso para asegurar que el DOM esté listo
-            setTimeout(() => {
-                window.scrollTo({
-                    top: targetSection.offsetTop - headerHeight,
-                    behavior: 'smooth'
-                });
-            }, 100);
+        var initHash   = window.location.hash.substring(1);
+        var initTarget = document.getElementById(initHash);
+        if (initTarget) {
+            /* Esperamos a que el layout esté listo */
+            setTimeout(function () {
+                var top = initTarget.getBoundingClientRect().top + window.scrollY - HEADER_H;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }, 250);
         }
     }
 
-    // ===== EFECTO DE SCROLL EN EL HEADER =====
-    window.addEventListener('scroll', function() {
-        // Si el scroll es mayor de 50px, añadimos clase 'scrolled' al header
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    /* ── ACTIVE LINK INTELIGENTE ── */
+    var currFile = window.location.pathname.split('/').pop() || 'index.html';
+
+    if (currFile === 'mi_contacto.html') {
+        setActiveLink('mi_contacto.html');
+
+    } else if (currFile.startsWith('teoria_')) {
+        /* En teoría: marcar Portfolio como activo */
+        setActiveLink('index.html#portfolio');
+
+    } else {
+        /*
+         * En index.html: scroll-spy con IntersectionObserver.
+         * Detecta qué sección está en pantalla y marca el link correcto.
+         * Así nunca se marcan todos a la vez.
+         */
+        var sections = document.querySelectorAll('main section[id]');
+        if ('IntersectionObserver' in window && sections.length) {
+            var spy = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    var id = entry.target.getAttribute('id');
+                    navLinks.forEach(function (l) {
+                        var lhref = l.getAttribute('href') || '';
+                        var lhash = lhref.split('#')[1] || '';
+                        l.classList.toggle('active', lhash === id);
+                    });
+                });
+            }, { rootMargin: '-35% 0px -60% 0px' });
+
+            sections.forEach(function (s) { spy.observe(s); });
         }
+    }
 
-        // Mostrar/ocultar botón "volver arriba"
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.add('show');
-        } else {
-            scrollToTopBtn.classList.remove('show');
-        }
-    });
+    /* ── ANIMACIÓN DE CARDS ── */
+    var cards = document.querySelectorAll('.portfolio-card');
+    if ('IntersectionObserver' in window && cards.length) {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry, idx) {
+                if (!entry.isIntersecting) return;
+                setTimeout(function () { entry.target.classList.add('visible'); }, idx * 70);
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.1 });
+        cards.forEach(function (c) { io.observe(c); });
+    } else {
+        cards.forEach(function (c) { c.classList.add('visible'); });
+    }
 
-    // ===== MENÚ HAMBURGUESA =====
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // ===== CERRAR MENÚ AL HACER CLIC EN UN ENLACE =====
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-
-    // ===== SCROLL SUAVE PARA ENLACES INTERNOS (incluso desde otras páginas) =====
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            // Prevenimos el comportamiento por defecto solo si el enlace es interno (con #)
-            const href = this.getAttribute('href');
-            
-            // Si el enlace contiene un hash (ej. index.html#inicio) y estamos en la misma página
-            // O si es solo #inicio (caso de estar en index)
-            if (href.includes('#')) {
-                event.preventDefault();
-
-                // Separamos la parte del archivo y el hash
-                const [file, hash] = href.split('#');
-                
-                // Si el archivo es "index.html" o está vacío (enlace relativo), consideramos la página actual
-                if (file === 'index.html' || file === '' || file === window.location.pathname.split('/').pop()) {
-                    // Si el hash existe, hacemos scroll suave
-                    if (hash) {
-                        const targetSection = document.getElementById(hash);
-                        if (targetSection) {
-                            window.scrollTo({
-                                top: targetSection.offsetTop - headerHeight,
-                                behavior: 'smooth'
-                            });
-                            // Actualizamos la URL sin recargar (opcional)
-                            history.pushState(null, null, `#${hash}`);
-                        }
-                    }
-                } else {
-                    // Si el archivo es diferente (ej. otra página), redirigimos con el hash
-                    window.location.href = href;
-                }
-            }
-            // Si el enlace no tiene #, se comporta normalmente (ej. mi_contacto.html)
-        });
-    });
-
-    // ===== BOTÓN VOLVER ARRIBA =====
-    scrollToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // ===== CERRAR MENÚ AL HACER CLIC FUERA DE ÉL (opcional, mejora UX) =====
-    document.addEventListener('click', function(event) {
-        if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    });
 });
